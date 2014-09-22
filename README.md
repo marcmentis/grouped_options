@@ -27,11 +27,13 @@ Get the data to be converted into the 2d array. I.e., from a database
 Create the 2d array and assign it to an instance variable (@grouped_options) that will be used as an argument in the `grouped_options_for_select` helper.    
 ```
 @grouped_options = GroupedOptions.grouped_options(@forSelect)
-```    
+```
 
-Create the Grouped Select dropdown
+### In Table 
+Create the Grouped Select dropdown:   
+
 Pass the 2d array (@grouped_options) as an argument to `grouped_options_for_select` within a `select_tag` helper.
-### In Table    
+   
 ```
 <%= select_tag(:ward_id, grouped_options_for_select(@grouped_options), prompt: 'Choose Ward') %>
 ```
