@@ -6,33 +6,31 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'grouped_options'
+    gem 'grouped_options', git: 'git@github.com:marcmentis/grouped_options.git'
+
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install grouped_options
 
 ## Usage
 
-TODO: Write usage instructions here
-
 ### In Controller   
-Get the data for the `select` from the database      
+Get the data to be converted into the 2d array. I.e., from a database      
 ```
 @forSelect = ForSelect.all
   .where(code: 'ward')
   .order(option_order: :asc)
 ```
 
-Create the @grouped_options instance variable for use in the `View`    
+Create the 2d array and assign it to an instance variable (@grouped_options) that will be used as an argument in the `grouped_options_for_select` helper.    
 ```
 @grouped_options = GroupedOptions.grouped_options(@forSelect)
-```
+```    
 
+Create the Grouped Select dropdown
+Pass the 2d array (@grouped_options) as an argument to `grouped_options_for_select` within a `select_tag` helper.
 ### In Table    
 ```
 <%= select_tag(:ward_id, grouped_options_for_select(@grouped_options), prompt: 'Choose Ward') %>
