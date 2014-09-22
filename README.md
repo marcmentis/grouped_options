@@ -24,7 +24,7 @@ Get the data to be converted into the 2d array. I.e., from a database
   .order(option_order: :asc)
 ```
 
-Create the 2d array and assign it to an instance variable (@grouped_options) that will be used as an argument in the `grouped_options_for_select` helper.    
+Create the 2d array and assign it to an instance variable.    
 ```
 @grouped_options = GroupedOptions.grouped_options(@forSelect)
 ```
