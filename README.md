@@ -20,12 +20,17 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
-### In Controller    
+### In Controller   
+Get the data for the `select` from the database      
 ```
 @forSelect = ForSelect.all
   .where(code: 'ward')
-  .order(option_order: :asc)  
-@grouped_options = ForSelect.grouped_options(@forSelect)
+  .order(option_order: :asc)
+```
+
+Create the @grouped_options instance variable for use in the `View`    
+```
+@grouped_options = GroupedOptions.grouped_options(@forSelect)
 ```
 
 ### In Table    
