@@ -12,7 +12,8 @@ module GroupedOptions
 			this_grp = [e.grouper]
 
 			if last_grp == this_grp        
-				this_valText = [e.value, e.text]
+				# this_valText = [e.value, e.text]
+				this_valText = [e.text, e.value]
 				valText.push this_valText
 
 				# If last grouper has more than one option
@@ -28,7 +29,8 @@ module GroupedOptions
 					valText = []
 				end
 
-				this_valText = [e.value, e.text]
+				# this_valText = [e.value, e.text]
+				this_valText = [e.text, e.value]
 				valText.push this_valText
 
 				# If last grouper has only one option
